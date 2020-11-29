@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+  
+        <div *ngFor="let newsitem of newsitems">
+          <div class="post-preview">
+            <a [routerLink]="['/news', newsitem._id]">
+              <h2 class="post-title">
+                {{ newsitem.Title }}
+              </h2>
+              <h3 class="post-subtitle">
+                {{ newsitem.SubTitle }}
+              </h3>
+            </a>
+          </div>
+          <button (click)="accept(newsitem._id)" type="button" class="btn btn-outline-primary">Accept</button>
+          <hr>
+      </div>
+      
+      </div>
+    </div>
+  </div>

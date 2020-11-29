@@ -1,0 +1,37 @@
+<form #f="ngForm" (ngSubmit)="signUp(f.value)">
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+
+      <label for="FirstName"><b>First name</b></label>
+      <input type="text" placeholder="First name" ngModel name="FirstName" id="FirstName" required>
+
+      <label for="LastName"><b>Last name</b></label>
+      <input type="text" placeholder="Last name" ngModel name="LastName" id="LastName" required>
+  
+      <label for="Email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" ngModel name="Email" id="Email" required>
+
+      <label for="Username"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" ngModel name="Username" id="Username" required>
+  
+      <label for="Password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" ngModel name="Password" id="Password" required>
+  
+      <!-- <label for="Password-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="Password-repeat" id="Password-repeat" required>
+
+      <label for="Role" *ngIf="authService.isLoggedIn() &&"><b>Role</b></label>
+      <input *ngIf="authService.isLoggedIn() &&" type="Role" placeholder="Enter Role" name="Role" id="Role" value="user" required> -->
+      <hr>
+  
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+  
+    <div class="container signin">
+      <p>Already have an account? <a routerLink="/login">Sign in</a>.</p>
+    </div>
+  </form>
+  

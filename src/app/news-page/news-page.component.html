@@ -1,0 +1,33 @@
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <h1 class="h1 text-center">{{ newsitem.Title }}</h1>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <p>{{ newsitem.Body }}</p>
+        </div>
+        <a class="btn btn-primary col-md-4 col-lg-8 center-block mx-auto" [routerLink]="['/']">Back</a>
+      </div>
+    </div>
+</article>
+
+<div class="container mt-5">
+    <h2 class="text-center">Comments</h2>
+    <hr>
+    <div *ngFor="let bericht of newsitem.Comments">
+        <div class="row comment">
+            <div class="head">
+                <small><strong class='user'>{{ bericht.Name }}</strong></small>
+            </div>    
+            <p>{{ bericht.Comment }}</p>
+        </div>
+        <hr>
+    </div>
+
+    <div class="text-center" *ngIf="authService.isLoggedIn()"><a id="addacomment" class="btn btn-primary">Add a comment</a></div>
+    <div class="text-center pt-3" id="addcomment" style="display: none;" *ngIf="authService.isLoggedIn()">
+
+        <textarea (keyup.enter)="newComment(title)" #title class="form-control" placeholder="Write your COMMENT hier and then press enter."></textarea><br/>
+
+    </div>
+</div>
